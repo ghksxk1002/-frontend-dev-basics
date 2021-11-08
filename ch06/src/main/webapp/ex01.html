@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	var number = 10;
+	console.log(number, window.number);
+
+	var s = "";
+	for (prop in window) {
+		s += (prop + " : " + window[prop] + "\n");
+	}
+
+	console.log(s);
+
+	// 팝업창
+	setTimeout(
+			function() {
+
+				var popup = window.open("popup.html", "popup",
+						"width=600, height=400");
+				setTimeout(function() {
+
+					// popup 자식창의 내용바꾸기
+					// 보안 문제가 있다 : 도메인이 다른면 조작(cross domain)이 부가능 같은 도메인이여야 조작이 가능하다
+					popup.document.write("<h1>popup text changed</h1>")
+				}, 3000);
+
+				setTimeout(function() {
+					// popup 자식창의 내용바꾸기
+					// 보안 문제가 있다 : 도메인이 다른면 조작(cross domain)이 부가능 같은 도메인이여야 조작이 가능하다
+					popup.message();
+				}, 4000);
+				
+				setTimeout(function() {
+					// popup 자식창의 위치 이동
+					// 보안 문제가 있다 : 도메인이 다른면 조작(cross domain)이 부가능 같은 도메인이여야 조작이 가능하다
+					popup.moveTo(200, 200);
+				}, 8000);
+
+			}, 2000);
+</script>
+</head>
+<body>
+	<h1>BOM(Browser Object Model)</h1>
+	<h2>1. Window 전역객체(Global Object)</h2>
+	<ul>
+		<li>자바스크립트가 브라우저 창(Window)을 제어하기 위한 객체</li>
+		<li>자바 스크립트가 실행됐을떼 관련된 환경 정보에 접근이 가능한 객체(Environments인데 그중에서도
+			Global Variable Object)</li>
+	</ul>
+</body>
+</html>
