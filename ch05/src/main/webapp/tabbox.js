@@ -25,8 +25,6 @@ var tabbox = {
 		for (var i = 0; i < litab.length; i++) {
 			litab[i].addEventListener("click", this.onTabClicked);
 		}
-
-
 	},
 	onTabClicked: function() {
 		console.log("chlick!!" + this.innerText);
