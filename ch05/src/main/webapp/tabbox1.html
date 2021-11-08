@@ -27,7 +27,10 @@ ul, ol	{ list-style-type: none }
 	margin-right: 2px;
 	background-color: #ccc;
 	cursor: pointer;
-	
+}
+
+.tab-box li.selected {
+	background-color: #fC6;
 }
 
 .tab-box div {
@@ -36,41 +39,30 @@ ul, ol	{ list-style-type: none }
 	border: 1px solid #999;
 	text-align: center;
 	line-height: 200px;
-
-}
-
-.tab-box li.selected {
-	background-color: #fc6;
-	
 }
 </style>
 <script>
-// DOM Level 1 Event 처리 : HTML element의 event 속성에 자바스크립트 코드를 사요하는 방법
-// 1) HTML 태그에 바로 적용하기
-/* var liSelected = null;
+// DOM Level 1 Event 처리: HTML element의 event 속성에 자바스크립트 코드를 사용하는 방법
+// 1) HTML Tag에 바로 적용하기
+var liSelected = null;
 var onTabClicked = function(li) {
-	li.className = 'selected'; // 유아이적으로 선택되 녀석
-	if(liSelected != null){
-		liSelected.className= '';
+	li.className = 'selected';  // selected
+	if(liSelected != null) {    // unselected
+		liSelected.className = '';
 	}
+	
 	liSelected = li;
-} */
-
-// DOM Level 1 Event 처리 : HTML element의 event 속성에 자바스크립트 코드를 사요하는 방법
-// 2) JavaScript Code(DOM API) 로만 작성하기
-
-
+}
 </script>
-
 </head>
 <body>
 <div class="tab-box">
 	<ul>
-        <li>메뉴 5</li>
-        <li>메뉴 4</li>
-        <li>메뉴 3</li>
-        <li>메뉴 2</li>
-        <li>메뉴 1</li>
+        <li onclick='onTabClicked(this);'>메뉴 5</li>
+        <li onclick='onTabClicked(this);'>메뉴 4</li>
+        <li onclick='onTabClicked(this);'>메뉴 3</li>
+        <li onclick='onTabClicked(this);'>메뉴 2</li>
+        <li onclick='onTabClicked(this);'>메뉴 1</li>
     </ul>
     <div>
     	탭뷰입니다.
