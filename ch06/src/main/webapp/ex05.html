@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="browser-detect.js" type="text/javascript"></script>
+<script>
+/*
+  용어정리
+ 1. Tag
+ 	- HTML 문서 안에서 텍스트나 콘텐츠를 정의할때 사용하는 마크업이다
+ 	
+ 2. 문서객체(Document Object)
+ 	- DOM(Document Object Model)
+ 	- 구현트리의 구성 노드의 ㅏ입은 HTMLElement 이다.
+ 	- JavaScript 에서 접근하고 조작하게 된다.(Document 라는 이름으로..)
+ 
+ 3. 노드(자바스트립트의 노드가 아니다) --> 자료구조의 트리의 노드
+ 	- DOM Tree의 각각의 요소
+ */
+
+window.addEventListener("load", function(){
+	console.log("loaded!!")
+	var el = document.getElementById("header-3");
+	console.log(el);
+});
+</script>
+</head>
+<body>
+	<h1>DOM(Document Object Model)</h1>
+	<h2>1. HTML Elenment(Tag)</h2>
+	
+	<h3 id="header-3">Step1</h3>
+	<script>alert('Step2');</script>	
+	
+	<h3>Step3</h3>
+	<script>alert('Step4');</script>	
+</body>
+</html>
