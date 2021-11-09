@@ -11,16 +11,18 @@ window.addEventListener("load", function() {
 	imgElement.style.width = "200px";
 	imgElement.alt = "아이유";
 	imgElement.title = "아이유 이쁘다";
-	imgElement['data-no'] = 10;  /* 비표준 속성 */
+	imgElement['data-no'] = 10;  /* 비표준 속성 */ // 프로퍼티가 되지 않는다
 	
 	setTimeout(function(){
 		document.body.appendChild(imgElement);
+		var h = document.getElementById('h');
+		console.log(h);
 	}, 3000);
 });
 </script>
 </head>
 <body>
-	<h1>DOM(Document Object Model)</h1>
+	<h1 id='h' data-no='10'>DOM(Document Object Model)</h1>
 	<h2>3. HTML Element 속성 조작하기</h2>
 
 </body>
