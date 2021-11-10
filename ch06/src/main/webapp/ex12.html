@@ -4,24 +4,49 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <script>
-/*
- * 기본 이벤트 핸들어 동작 막기
- */
+var registerEventHandler = function(element, eventName, eventHandler) {
+	element &&                   // element가 null이 아니면
+	element.attachEvent &&       // <= ie8,
+	element.attachEvent('on' + eventName, eventHandler);
+	
+	element &&                   // element가 null이 아니면
+	element.addEventListener &&  // 표준 브라우저
+	element.addEventListener(eventName, eventHandler);
+}
+
 window.addEventListener("load", function() {
-	document
-		.getElementById("btn-delete")
-		.addEventListener("click", function(event){
-			event.preventDefault();
-			console.log("비밀번호 입력 다이알로그 띠우기");
-		});
+	var el = document.getElementById("header");
+	
+	var clickEventHandler1 = function(){
+		console.log("click1");
+	}
+
+	var clickEventHandler2 = function(){
+		console.log("click2");
+	}
+
+	var clickEventHandler3 = function(){
+		console.log("click3");
+	}
+	
+	// 다중 Listener 예제
+	registerEventHandler(el, "click", clickEventHandler1);
+	registerEventHandler(el, "click", clickEventHandler2);
+	
+	// level0도 level2 지원
+	el.onclick = clickEventHandler3;
+	
+	// 제거
+	el.removeEventListener("click", clickEventHandler1);
 });
 </script>
 </head>
 <body>
 	<h1>DOM(Document Object Model)</h1>
-	<h2>6. 기본(default) Event Handler 동작 막기</h2>
+	<h2>5. Event 처리</h2>
 	
-	<a href="btn-delete">삭제</a>
+	<h3 id='header'>Click!</h3>
+
 	
 </body>
 </html>
