@@ -18,6 +18,7 @@
 	<!-- validator, conversionService, messageConverter를 자동으로 등록 -->
 	<mvc:annotation-driven>
 		<mvc:message-converters>
+			<!-- HTML(text message converter -->
 			<bean class="org.springframework.http.converter.StringHttpMessageConverter">
 				<property name="supportedMediaTypes">
 					<list>
@@ -25,6 +26,37 @@
 					</list>
 				</property>
 			</bean>
+			
+			<!-- XML message converter -->
+			<!-- 
+				1. Mashalling
+					: 데이터(Object)를 xml 형태로 만드는 것
+				2. Unmashilng
+					: Xml으로 표현되어 있는 데이터를 특정 데이터 형테(자바에서는 OBject)로 만드는것
+			 	
+			 	3. 하는 방법
+			 		1) OXM(Object Xmk Mapping)
+			 			: XML 데이터와 객체를 맵핑
+			 			: MarshllingHttpMessageConverter
+			 		2) JAXB(Java Architecture for XML Binding) - 대부분 이런 형태로 많이 쓴다
+			 			: OXM을 쉽게 도와주는 Tool
+			 			: Marshalling과 Unmarshalling을 Annotation 기반으로 한다.
+			 			: JAXBAnnotation(@XmlElementRoot)를 사용해서 직관적 맵핑이 가능하다
+			 			: Jax2RootElementHttpMessageConverter -> @XmlElementRoot 어노테이션이 붙어있는것을 찾아서 처리
+									 
+			 -->
+			 <bean class="org.springframework.http.converter.xml.Jaxb2RootElementHttpMessageConverter">
+				<property name="supportedMediaTypes">
+					<list>
+						<value>application/xml; charset=UTF-8</value>
+					</list>
+				</property>
+			</bean>	
+			 
+			 
+			 
+			
+			<!-- JSON message converter -->
 			<bean class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">
 				<property name="supportedMediaTypes">
 					<list>

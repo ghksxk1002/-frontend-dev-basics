@@ -10,8 +10,8 @@
 <script type="text/javascript" src="${pageContext.request.contextPath}/jquery/jquery-3.6.0.js"></script>
 <script>
 $(function(){
-	$(butten).click(function() {
-		$("p").load();
+	$("button").click(function() {
+		$("p").load("/ch08/api/text");
 	});
 });
 </script>
