@@ -1,4 +1,4 @@
-package com.douzone.ch03.controller.dto;
+package com.douzone.ch08.controller.dto;
 
 public class JsonResult {
 	private String result;  /* "success" or "fail" */

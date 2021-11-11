@@ -1,4 +1,4 @@
-package com.douzone.ch03.controller.vo;
+package com.douzone.ch08.controller.vo;
 
 public class GuestbookVo {
 	private Long no;

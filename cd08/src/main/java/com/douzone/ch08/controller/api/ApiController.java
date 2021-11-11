@@ -7,9 +7,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.douzone.ch03.controller.dto.JsonResult;
-import com.douzone.ch03.controller.dto.XmlResult;
-import com.douzone.ch03.controller.vo.GuestbookVo;
+import com.douzone.ch08.controller.dto.JsonResult;
+import com.douzone.ch08.controller.dto.XmlResult;
+import com.douzone.ch08.controller.vo.GuestbookVo;
 
 @Controller
 @RequestMapping("/api")

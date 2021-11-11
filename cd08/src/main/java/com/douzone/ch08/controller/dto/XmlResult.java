@@ -1,4 +1,4 @@
-package com.douzone.ch03.controller.dto;
+package com.douzone.ch08.controller.dto;
 
 import javax.xml.bind.annotation.XmlRootElement;
 
