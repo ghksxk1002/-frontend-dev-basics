@@ -38,21 +38,16 @@ $(function(){
 		});
 
 	$("#btn-slideshow").click(function() {
-			if(status == 1){	
-				setInterval(function() {
+			setInterval(function() {
 		
 					var result = Math.floor(Math.random() * images.length); // 0 ~ 7
 					var img = "images/" + images[result].split(":")[1];
 					$("div img").attr("src", img);
 		
-				}, 3000); 
-				status--;
-				console.log(status)
-			} else{
-				clearInterval();
-				console.log(status)
-			}		
-		});
+				}, 3000);
+			});
+				
+		
 	});
 </script>
 </head>

@@ -37,6 +37,8 @@ console.log(str8);
 var str9 = str7.substr(10, 3);
 console.log(str9);
 
+console.log("----------------------------------")
+
 var str10 = str7.substring(10, 13/* last index -1 */);
 console.log(str10);
 
