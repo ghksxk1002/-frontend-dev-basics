@@ -29,3 +29,32 @@ numbers.forEach(function(n){
 
     process.stdout.write(`${n}:${power(n)}\t`);
 });
+
+// ex2
+console.log("\n-----------------------------\n");
+numbers.forEach(n => process.stdout.write(`${n}:${(x => x*x)(n)}\t`));
+
+// ex3 - 여러행 함수
+console.log("\n-----------------------------\n");
+[5, 3, 6, 98 ,1000, 1002, 5005].forEach(e => {
+    if(e % 5 == 0){
+        process.stdout.write(`${e}\t`);
+    }
+});
+
+// ex4 - this를 어휘적 binding 이 가능하다(Lexical Bind)
+console.log("\n-----------------------------\n");
+const dooly = {
+    name: '둘리',
+    friend: ['또치', '바우나', '도우너', '승현'],
+    printfriend: function(){
+        // this.friend.forEach(function(f){
+        //     console.log(`${this.name}의 친구 ${f}`);
+        // }.bind(this));
+
+        this.friend.forEach(f => {console.log(`${this.name}의 친구 ${f}`)});
+
+    }
+}
+
+dooly.printfriend();
