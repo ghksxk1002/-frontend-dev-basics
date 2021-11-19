@@ -58,14 +58,10 @@ console.log(`${studentName}의 성적
 
 // ex05 함수의 파라미터
 
-// const {score: {
-//         math=0, 
-//         korean=0, 
-//         science=0, 
-//         music=0}}=score
 const averageScore = function({name: studentName, score:{math=0, korean=0, science=0}}) {
     console.log(`${studentName}의 평균은 ${(math+korean+science)/3}입니다`)
 };
-
 // 예 서버나 함수에서 넘겨준 객체를 받아서 처리하고 싶을때
 averageScore(student)
+
+// ex06 배열
